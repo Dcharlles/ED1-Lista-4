@@ -1,0 +1,226 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+Typedef struct {
+
+    Nome da corda [100];
+    Int CPF;
+} Clientes;
+
+Typedef struct {
+
+    Int info;
+    Struct TipoNo * proximo;
+    Struct TipoNo * anterior;
+
+} TipoNo
+
+Typedef struct {
+
+    TipoNo * inicio = NULL;
+    TipoNo * fim = NULL;
+
+} Cliente;
+
+Void inicializarLista (Cliente * c1) {
+
+    C1-> incio = NULL;
+    C1-> fim = NULL;
+
+}
+
+Void inserirNoInicio (Ciente * c1) {
+    TipoNo * novoElemento;
+    NovoElemento = novo TNo;
+    
+    NovoElemento-> proximo = NULL;
+    NovoElemento-> anterior = NULL;
+    
+    C1 = novoElemento-> info;
+    
+    If (c1-> inicio == NULL) {
+        
+        C1-> proximo = novoElemento;
+        C1 -> anterior = novoElemento;
+        
+    }
+    
+    outro{
+        
+        C1-> inicio-> anterior = novoElemento;
+        NovoElemento-> proximo = c1-> inicio;
+        C1-> inicio = novoElemento;
+        
+    }
+}
+
+Void inserirNoFim (Cliente * c1) {
+
+    TipoNo * novoElemento;
+    NovoElemento = novo TipoNo;
+    
+    C1 = novoElemento-> info;
+    
+    NovoElemento-> inicio = NULL;
+    NovoElemento-> fim = NULL;
+    
+    If (c1-> inicio = NULL) {
+        
+        C1-> inicio = novoElemento;
+        C1-> fim = novoElemento;
+        
+    }
+
+    outro{
+        
+        C1-> fim-> proximo = novoElemento;
+        NovoElemento-> anterior = c1-> fim;
+        C1-> fim = novoElemento;
+        
+    }
+}
+
+Void apresentarPeloInicio (Cliente * c1) {
+
+    TipoNo * aux;
+    
+    If (c1-> inicio = NULL) {
+        
+        Printf ("-------- Lista vazia ------" \ n \ n);
+        
+    }
+
+    outro{
+        
+        Aux = cliente-> inicio;
+        Enquanto (aux! = NULL) {
+            
+            Printf ("Info =% d \ n", aux-> info);
+            Aux = aux-> proximo;
+            
+        }
+        
+        Printf ("- - - fim da lista - - - \ n \ n \ n");
+    }
+    
+    
+    Getchar ();
+}
+
+Void apresentarPeloFim (Cliente * c1) {
+
+    TipoNo * aux;
+    If (cliente-> fim = NULL) {
+        
+        Printf ("- - - fila vazia - - - \ n \ n");
+        
+    }
+    
+    Aux = c1-> fim;
+    Enquanto (aux! = NULL) {
+        
+        Printf ("info =% d \ n", aux-> info);
+        Aux = aux-> anterior;
+        
+    }
+    
+    Printf ("- - - fim da lista - - - \ n \ n");
+    Getchar ();
+}
+
+TipoNo * buscarDado (Clientes c1) {
+
+    TipoNo * ptr;
+    If (inicio == NULL) {
+        
+        Return NULL;
+    }
+    
+    Ptr = inicio;
+    While (ptr! = NULL) {
+        If (ptr-> info == c1) {
+            
+            Return (ptr);
+            
+        }
+        outro{
+            
+            Ptr = ptr-> proximo;
+            
+        }
+        
+    }
+
+    Return NULL;
+}
+
+Int remover_inicio (Clientes c1) {
+
+    TipoNo * elemen_atual, * elemen_prox, * elemen_ant;
+    Clientes dado;
+    
+    Dado = c1;
+    
+    If (inicio == NULL) {
+        
+        Return 0;
+        
+    }
+
+    outro{
+        
+        Elemen_atual = inicio;
+        Enquanto (elemen_atual! = NULL) {
+            
+            Elem_prox = elem_atual-> prox;
+            Elem_ant = elem_atual-> ante;
+            
+            If (elemen_atual-> info == dado)
+                If (elem_ant! = NULL) {
+                    If (elem_prox! = NULL) {
+                        
+                        Elem_ant-> prox = elem_prox;
+                        Elem_prox-> ant = elem_ant;
+                        Livre (elem_atual);
+                        pausa
+                        
+                        
+                    outro {
+                        
+                        
+                        Elemen_ant-> prox = NULL;
+                        Fim = elemen_ant;
+                        Livre (elem_atual);
+                        pausa;
+                        
+                    }
+                    
+                    outro{
+                        
+                        If (elemen-> prox! = NULL) {
+                            
+                            Elemen_prox-> ante = NULL;
+                            Inicio = elemen_prox;
+                            Livre (elemen_atual);
+                            pausa;
+                            
+                        }
+                        
+                     outro{
+                        
+                        Elem_atual = elem_atual-> prox;
+                        
+                     }  
+                     
+                     Printf ("O elemento nao se encontra na lista")
+                      
+                    }                        
+                    }
+                    
+                    
+                }
+        }
+        
+    }
+    
+}
