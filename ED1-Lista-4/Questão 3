@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define max 100
+
+Tupedef struct {
+
+    String nome;
+    Int CPF;
+
+} Cliente;
+
+Typedef struct {
+
+    Cliente pilhaElementos [máx];
+    Int topo;
+
+TPilha
+
+Void inicializarPilha (TPilha * pilha) {
+
+    TPilha-> topo = -1;
+}
+
+Void inserirElemento (TPilha * pilha, Cliente c1) {
+
+    If (pilha-> topo <99) {
+        Pilha-> topo = pilha-> topo + 1;
+        Pilha-> pilhaElementos [pilha-> topo] = c1;
+
+    }
+
+    outro{
+
+        Printf ("pilha cheia");
+    }
+
+Cliente removerElemento (TPilha * pilha) {
+
+    If (pilha-> topo> = 0) {
+
+        Cliente a = pilha-> topo;
+        Pilha-> topo = pilha-> topo - 1;
+
+        Retornar a;
+    }
+
+    outro{
+
+        Printf ("A pilha esta vazia");
+
+    }
+
+}
+
+
+Int main ()
+{
+    Cliente c1;
+    TPilha a;
+    
+    InicializarPilha (& a);
+    IserirElemento (& a, c1);
+    RemovedElemento (& a);
+}
